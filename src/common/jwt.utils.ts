@@ -1,4 +1,4 @@
-import { sign, SignOptions, verify, VerifyOptions, decode, DecodeOptions, JwtPayload } from 'jsonwebtoken';
+import { sign, SignOptions, verify, VerifyOptions, decode, DecodeOptions } from 'jsonwebtoken';
 import { IUserRequest } from './types';
 
 
