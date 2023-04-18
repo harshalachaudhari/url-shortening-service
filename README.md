@@ -23,14 +23,28 @@ Note:
 
 ### Endpoints
 
-- POST /createSort should provide users jwt Token, accepts below body:
-  - `userName` UserName with minLength
-  - `password` Users Password
+- POST /register should register user, accepts below body:
+  - `name` users name
+  - `email` Users email
+  - `password` Users Password with minLength 8
+  - `isAdmin` true if user isAdmin else false
   - {
-    "userName":<userName>,
+    "name": <name>,
+	  "isAdmin": <booleanvalue>,
+    "email":<email>,
     "password":<password>
     }
-- POST /createShortUrl should return success on successful shortening of valid URL.
+
+- POST /login should provide users jwt Token, accepts below body:
+  - `email` Users email
+  - `password` Users Password with minLength 8
+  - {
+    "email":<email>,
+    "password":<password>
+    }
+  
+
+- POST /createShortUrl should return success and shortUrlDetails on successful shortening of valid URL.
 
   - This service does data validation on URL.
   - This service is responsible to authenticate the caller with JWT token and then validate and store shortUrl in DB.
